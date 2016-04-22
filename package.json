@@ -1,0 +1,26 @@
+{
+  "name": "note",
+  "version": "1.0.0",
+  "description": "cui note application",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yujilow1220/note-js.git"
+  },
+  "author": "Takuya Takahashi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/yujilow1220/note-js/issues"
+  },
+  "homepage": "https://github.com/yujilow1220/note-js#readme",
+  "bin": {
+    "note": "index.js"
+  },
+  "dependencies": {
+    "argv": "0.0.2",
+    "git-cli": "^0.9.1"
+  }
+}
