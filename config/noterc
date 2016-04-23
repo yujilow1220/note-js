@@ -1,0 +1,7 @@
+{
+  "editor": "vim",
+	"save":{
+		"dir_path":"~/.note",
+		"git_repository":""
+	}
+}
