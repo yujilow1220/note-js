@@ -21,8 +21,8 @@
   },
   "dependencies": {
     "argv": "0.0.2",
-    "config": "^1.20.1",
     "fs": "0.0.2",
-    "git-cli": "^0.9.1"
+    "git-cli": "^0.9.1",
+    "runtime-configuration": "^0.1.2"
   }
 }
