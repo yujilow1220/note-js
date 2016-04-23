@@ -1,5 +1,8 @@
 #!/usr/bin/env node
 
+
+// TODO: configの場所をどうするか
+// TODO: configのファイルをコマンドで編集できるようにする
 'use strict';
 var argv = require('argv');
 var config = require('config');
