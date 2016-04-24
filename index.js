@@ -61,7 +61,10 @@ rc("note", function(err, config){
 	  		break;
 	  }
 });
-
+/**
+ * ヘルプを出力
+ *
+ */
 
 function help(){
 	console.log("\tUsage:");
@@ -72,6 +75,12 @@ function help(){
 	console.log("\t\tnote conifg example\t: show config example.");
 
 }
+
+/**
+ * 今日の日付をフォーマットして出力
+ *
+ */
+
 function mkdate(){
 	var date = new Date();
 	var year = date.getFullYear();  
