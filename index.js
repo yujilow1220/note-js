@@ -37,6 +37,17 @@ rc("note", function(err, config){
 					});
 				}else{
 					//TODO: titleの中身をつなげて表示
+					fs.readdir(config.save.dir_path+"/"+title, function(err, files){
+						if(files.length === 0){
+							console.log('no file detected.');
+							return;
+						}
+						files.forEach(function(file){
+							var contents = fs.readFileSync(config.save.dir_path+"/"+title+"/"+file).toString();
+							console.log("------------------"+file+"----------------");
+							console.log(contents);
+						});
+					});
 					return;
 				}
 
