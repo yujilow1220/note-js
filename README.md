@@ -10,7 +10,7 @@ This is a cui-based note application.
 $ npm install -g note-js
 ```
 
-Unfortunately, I don't deploy it to npm yet. So, you need install it by below command.
+Unfortunately, this tool is not deployed to npm yet. So, you need install it by this command.
 
 ```
 $ npm install -g https://github.com/yujilow1220/note-js.git
