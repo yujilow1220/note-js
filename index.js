@@ -38,7 +38,7 @@ rc("note", function(err, config){
 				}else{
 					//TODO: titleの中身をつなげて表示
 					fs.readdir(config.save.dir_path+"/"+title, function(err, files){
-						if(files.length === 0){
+						if(!files || files.length === 0){
 							console.log('no file detected.');
 							return;
 						}
