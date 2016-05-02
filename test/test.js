@@ -16,12 +16,7 @@ describe('base', function(){
 });
 
 describe("show", function(){
-	it('should show some directory', function(){
-		
-	});
 });
 
 describe('edit', function(){
-	it('should show such directory', function(){
-	});	
 });
