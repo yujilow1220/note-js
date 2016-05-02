@@ -4,10 +4,7 @@ var rewire = require('rewire');
 var note = rewire('../lib/note.js');
 
 describe('base', function(){
-	it('can get config', function(){
-	});
-
-	it('can init', function(done){
+	it('can get config', function(done){
 		note.init(function(){
 			assert.equal(note.config.editor, 'vim');
 			done();
