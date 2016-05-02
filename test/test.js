@@ -5,13 +5,13 @@ var note = rewire('../lib/note.js');
 
 describe('base', function(){
 	it('can get config', function(){
-		var config = note.config;
-		console.log(config.editor);
-		assert.equal(config.editor, 'vim');
 	});
 
-	it('can get path', function(){
-		
+	it('can init', function(done){
+		note.init(function(){
+			assert.equal(note.config.editor, 'vim');
+			done();
+		});
 	});
 });
 

@@ -19,43 +19,17 @@ if(!state || state === "-h" || state === "help"){
 	return;
 }
 
-rc("note", function(err, config){
+var note = require('./lib/note.js');
+console.log(note.config);
 
-	if(!config.save.dir_path){
-		config.save.dir_path = process.env.HOME+"/.note";
-	}
 	switch(state){
 
 		case 'debug':
-			rc("note", function(err, config){
-				console.log(config);
-			});
 			break;
 
 		case 'show':
-			var title = targets.pop();
-			if(!title){
-				fs.readdir(config.save.dir_path, function(err, files){
-					if (err) throw err;
-					files.forEach(function(file){
-						console.log(file);
-					});
-				});
-			}else{
-				fs.readdir(config.save.dir_path+"/"+title, function(err, files){
-					if(!files || files.length === 0){
-						console.log('no file detected.');
-						return;
-					}
-					files.forEach(function(file){
-						var contents = fs.readFileSync(config.save.dir_path+"/"+title+"/"+file).toString();
-						console.log("------------------"+file+"----------------");
-						console.log(contents);
-					});
-				});
-				return;
-			}
-
+			var title = targets.shift();
+			note.show(title);
 			break;
 
 		case 'config':
@@ -79,7 +53,6 @@ rc("note", function(err, config){
 			});
 			break;
 	}
-});
 /**
  * ヘルプを出力
  *
@@ -100,25 +73,23 @@ function help(){
  *
  */
 
-function push2Git(basedir, file){
+function push2git(basedir, file){
 	Git.Repository.open(basedir);
-	
 
 }
 
-modules.exports.push2Git = push2Git;
 function mkdate(){
 	var date = new Date();
-	var year = date.getFullYear();  
-	var month = date.getMonth() + 1;  
-	var day = date.getDate();  
+	var year = date.getFullYear();
+	var month = date.getMonth() + 1;
+	var day = date.getDate();
 
-	if ( month < 10 ) {  
-		　　month = '0' + month;  
-	}  
-	if ( day < 10 ) {  
-		　　day = '0' + day;  
-	}  
+	if ( month < 10 ) {
+		　　month = '0' + month;
+	}
+	if ( day < 10 ) {
+		　　day = '0' + day;
+	}
 
 	var str = year + '-' + month + '-' + day;
 	return str;
