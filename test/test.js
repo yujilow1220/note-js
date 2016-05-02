@@ -10,6 +10,13 @@ describe('base', function(){
 			done();
 		});
 	});
+
+	it('can validate and set configure', function(done){
+		note.init(function(){
+			assert.equal(note.config.save.dir_path, process.env.HOME+"/.note");
+			done();
+		});
+	})
 });
 
 describe("show", function(){
