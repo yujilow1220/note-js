@@ -27,7 +27,7 @@ describe("show", function(){
 describe('edit', function(){
 	var push2git = note.__get__('push2git');
 	it('can make git repository', function(){
-		assert.equal('Repository', push2git('/Users/owner/aaa'));
+		assert.equal('Repository', push2git('/Users/owner/aaa', 'https://github.com/yujilow1220/my-notes.git'));
 	});
 });
 
