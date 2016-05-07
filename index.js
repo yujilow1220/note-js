@@ -8,10 +8,6 @@
 
  'use strict';
  var argv = require('argv');
- var rc = require('runtime-configuration');
- var mkdirp = require('mkdirp');
- var fs = require('fs');
- var Git = require("nodegit");
  var targets = argv.run().targets;
  var state = targets.shift();
  if(!state || state === "-h" || state === "help"){
@@ -24,6 +20,7 @@
  	switch(state){
 
  		case 'debug':
+ 		console.log(__dirname);
  		break;
 
  		case 'show':
